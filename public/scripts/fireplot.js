@@ -1,7 +1,7 @@
 //Set Default Values
 var region = 'Boreal';
 var replicate = '0';
-var simfile = "/json/alfresco/ALF_CCSM4_rcp85.json";
+var simfile = "/json/alfresco/NCAR-CCSM4_rcp85.json";
 var obsfile = "/json/alfresco/Observed.json";
 var plot = "AAB";
 var maxreps = 200;
