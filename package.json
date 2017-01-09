@@ -1,0 +1,42 @@
+{
+  "name": "AlecBennett-Core",
+  "version": "1.0.0",
+  "description": "Core Code for AlecBennett.com",
+  "keywords": [
+    "Alec Bennett",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+  "author": {
+    "name": "Alec Bennett",
+    "email": "alec@alecbennett.com",
+    "url": "http://www.alecbennett.com/"
+  },
+  "homepage": "http://www.alecbennett.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alecbennett/alecbennett"
+  },
+
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+
+  "dependencies": {
+    "express": "~3.4.4",
+    "nib": "*",
+    "jade": "*",
+    "leaflet": "*",
+    "stylus": "*",
+    "mapbox": "*",
+    "nodemailer": "*",
+    "nodemailer-smtp-transport": "*"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+
+  "private": true,
+  "main": "server.js"
+}
