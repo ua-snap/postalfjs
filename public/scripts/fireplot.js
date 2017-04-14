@@ -1,12 +1,14 @@
 //Set Default Values
 var region = 'Boreal';
 var replicate = '0';
-var simfile = "/json/alfresco/NCAR-CCSM4_rcp85.json";
-var obsfile = "/json/alfresco/Observed.json";
-var plot = "AAB";
+var simfile = "/json/alfresco/ALF_TEST.json";
+var obsfile = "/json/alfresco/OBS_TEST.json";
+//var obsfile = "/json/alfresco/Observed.json";
+var plot = "DFN";
 var maxreps = 200;
 var startyear = 1950;
-var endyear = 2012;
+var endyear = 2014;
+var pixelsize = 1000;  // In meters
 $(document).ready( function() {
 	$.getJSON( obsfile, function( data ) {
 		var $rl = $("#region");
@@ -46,5 +48,7 @@ function drawPlot(p, reg, rep){
 
 	} else if (plot == "AAB"){
 		drawAnnualAreaBurned(reg, rep);
+	} else if (plot == "DFN"){
+		drawDecadalFireNum(reg, rep);
 	}
 }
