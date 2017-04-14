@@ -10,7 +10,7 @@ function drawHistAnnualAreaBurned(r){
 	$.getJSON( obsfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			yar.push(data._default[key].total_area_burned[region]);
-			xar.push(data._default[key].year);
+			xar.push(data._default[key].fire_year);
 		});
  	 });
 	var traceh = {

@@ -11,7 +11,7 @@ function drawAnnualAreaBurned(r, rep){
 	$.getJSON( obsfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			hyar.push(data._default[key].total_area_burned[region]);
-			hxar.push(data._default[key].year);
+			hxar.push(data._default[key].fire_year);
 		});
  	 });
 	var traceh = {
@@ -34,7 +34,7 @@ function drawAnnualAreaBurned(r, rep){
   		$.each( data._default, function( key, val ) {
 			if (data._default[key].replicate == replicate){
 				yar.push(data._default[key].total_area_burned[region]);
-				xar.push(data._default[key].year);
+				xar.push(data._default[key].fire_year);
 			}
 		});
  	 });

@@ -12,8 +12,8 @@ function drawAreaVSize(r, rep){
 	$.ajaxSetup({ async: false, dataType: "json" });
 	$.getJSON( obsfile, function( data ) {
   		$.each( data._default, function( key, val ) {
-			if (data._default[key].year >= startyear){
-				hdar["'" + data._default[key].year + "'"] = data._default[key].total_area_burned[region];
+			if (data._default[key].fire_year >= startyear){
+				hdar["'" + data._default[key].fire_year + "'"] = data._default[key].total_area_burned[region];
 			}
 
 		});
@@ -44,8 +44,8 @@ function drawAreaVSize(r, rep){
 			repcount[data._default[key].replicate.toString] = 1;
 		});
   		$.each( data._default, function( key, val ) {
-			if (data._default[key].year >= startyear){
-				dar["'" + data._default[key].replicate + "'"]["'" + data._default[key].year + "'"] = data._default[key].total_area_burned[region];
+			if (data._default[key].fire_year >= startyear){
+				dar["'" + data._default[key].replicate + "'"]["'" + data._default[key].fire_year + "'"] = data._default[key].total_area_burned[region];
 			}
 		});
  	 });
