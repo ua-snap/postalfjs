@@ -149,58 +149,14 @@ h3 {
 	font-size: 14px;
 	margin: auto;
 }
-
-.projectBlock {
-	color: #222222;
-	display: inline-block;
-	vertical-align: middle;
-	width: 280px;
-	height: 320px;
-	margin: 10px;
-	padding: 10px;
-	border: 1px solid #222222;
-	-moz-border-radius: 5px;
-	border-radius: 25px;
-	-moz-box-shadow: 2px 2px 1px #ccc;
-	-webkit-box-shadow: 2px 2px 1px #ccc;
-	box-shadow: 2px 2px 1px #ccc;
-	cursor: hand; cursor: pointer;
-
-	overflow: hidden;
-}
-.projectBlock:hover {
-	background-color: #555555;
-}
-.projectBlock:hover a {
-	color: #dedede;
-}
-.projectBlock a {
-	color: #111111;
-}
-.projectTitle {
-	text-align: center;
-	display: block;
-	font-size: 24px;
-	margin: 10px;
-	font-weight: bold;
-}
-.projectImage {
-	border: 1px solid black;
+select {
+	margin: 5px;
 	padding: 3px;
-	display: block;
-	height: 125px;
-	background-color: #ffffff;
+	font-size: 18px;
 }
-.projectImage img {
-	width: 272px;
-	height: 125px;
-	margin: 0px;
-	border: 0px;
-}
-.projectContent {
-	display: block;
-	margin-top: 10px;
-	font-size: 16px;
+input {
+	margin: 5px;
+	font-size: 18px;
 }
 .noScriptDemo {
 	left: 50%; 

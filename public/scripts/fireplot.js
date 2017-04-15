@@ -1,7 +1,7 @@
 //Set Default Values
 var region = 'Boreal';
 var replicate = '0';
-var simfile = "/json/alfresco/ALF_TEST.json";
+var simfile = "/json/alfresco/Base.json";
 var obsfile = "/json/alfresco/OBS_TEST.json";
 //var obsfile = "/json/alfresco/Observed.json";
 var plot = "DFN";
@@ -21,8 +21,9 @@ $(document).ready( function() {
 		$rc.append($("<option></option>").attr("value", i).text(i));
 	}
 	var $tc = $("#fileList");
-	for (var i = 0; i < myFiles.length; i++){
-		$tc.append($("<option></option>").attr("value", myFiles[i]).text(myFiles[i]));
+	var flist = myFiles.split(",");
+	for (var i = 0; i < flist.length; i++){
+		$tc.append($("<option></option>").attr("value", "/json/alfresco/" + flist[i]).text(flist[i]));
 	}
 	$("#plotfile").val(simfile);
 	drawPlot(plot, region, replicate);
@@ -35,7 +36,12 @@ $(document).ready( function() {
 	$("#plotStyle").change( function(){
 		drawPlot($(this).find('option:selected').val(), region, replicate);
 	});
-	$("#plotfile").change( function(){
+	//$("#plotfile").change( function(){
+	//	simfile = $(this).val();
+	//	console.log(simfile);
+	//	drawPlot(plot, region, replicate);
+	//});
+	$("#fileList").change( function(){
 		simfile = $(this).val();
 		console.log(simfile);
 		drawPlot(plot, region, replicate);
@@ -50,5 +56,7 @@ function drawPlot(p, reg, rep){
 		drawAnnualAreaBurned(reg, rep);
 	} else if (plot == "DFN"){
 		drawDecadalFireNum(reg, rep);
+	} else if (plot == "DFS"){
+		drawDecadalFireSize(reg, rep);
 	}
 }

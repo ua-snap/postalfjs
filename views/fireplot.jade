@@ -7,6 +7,7 @@ block content
   script(type="text/javascript", src="/scripts/aab.js")
   script(type="text/javascript", src="/scripts/cab.js")
   script(type="text/javascript", src="/scripts/decadal_firenum.js")
+  script(type="text/javascript", src="/scripts/decadal_firesize.js")
   script(type="text/javascript", src="/scripts/avs.js")
   script(type="text/javascript", src="/scripts/aabhist.js")
 
@@ -20,15 +21,19 @@ block content
 
   div#firePlot(style="width: 1000px; height: 700px;")
 
-  div#plotControls
+  div#plotControls(style="text-align: center;")
     select#plotStyle
       option(value="AAB") Annual Area Burned
       option(value="CAB") Cumulative Area Burned
       option(value="DFN") Decadal Fire Num
+      option(value="DFS") Decadal Fire Size
     select#region
     select#rep
-    input#plotfile(style="width: 300px;")
+    //- input#plotfile(style="width: 300px;")
     select#fileList
+
+  div#plotSpecificControls
+    placeholder
 
   div(style="display: inline-block; width: 234px; height: 60px; float: right;")
       script(type="text/javascript", src="http://pagead2.googlesyndication.com/pagead/show_ads.js")
