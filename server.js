@@ -1,11 +1,11 @@
 #!/bin/env node
-var express = require('express')
-  , stylus = require('stylus')
-  , nib = require('nib')
-  , morgan = require('morgan')
+var express = require('express'),
+  fs = require('fs')
+  stylus = require('stylus'),
+  nib = require('nib'),
+  morgan = require('morgan'),
+  server = express()
 var util = require('util')
-var fs = require("fs")
-var server = express()
 
 
 function compile(str, path) {
@@ -16,12 +16,12 @@ function compile(str, path) {
 
 server.set('views', __dirname + '/views')
 server.set('view engine', 'jade')
-server.use(express.logger('dev'))
-server.use(stylus.middleware(
-  { src: __dirname + '/public'
-  , compile: compile
-  }
-))
+//server.use(express.logger('dev'))
+//server.use(stylus.middleware(
+//  { src: __dirname + '/public'
+//  , compile: compile
+//  }
+//))
 server.use(express.static(__dirname + '/public'))
 server.use(express.urlencoded())
 server.use(express.json())
