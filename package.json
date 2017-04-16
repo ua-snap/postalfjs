@@ -20,12 +20,13 @@
   },
 
   "engines": {
-    "node": ">= 0.6.0",
-    "npm": ">= 1.0.0"
+    "node": "*",
+    "npm": "*"
   },
 
   "dependencies": {
-    "express": "~3.4.4",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
     "nib": "*",
     "jade": "*",
     "leaflet": "*",
@@ -41,6 +42,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/ua-snap/postalfjs.git"
   }
 }
 
