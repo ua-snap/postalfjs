@@ -21,7 +21,7 @@ function drawVegetation(r, rep){
 
 	replicate = rep;
 	region = r;
-	var ptitle = 'Vegetation: ' + region + ', Rep: ' + replicate;
+	var ptitle = vegtype + ' Vegetation: ' + region + ', Rep: ' + replicate;
 
 	var tar = new Array();
 	var dar = {};
