@@ -16,7 +16,7 @@
   "homepage": "http://www.alecbennett.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alecbennett/alecbennett"
+    "url": "https://github.com/ua-snap/postalfjs"
   },
 
   "engines": {
@@ -42,10 +42,6 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/ua-snap/postalfjs.git"
   }
 }
 
