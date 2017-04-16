@@ -25,7 +25,6 @@ function drawDecadalFireSize(r, rep){
 	var xar = new Array();
 	var yar = new Array();
 	var repcount = [];
-	console.log(tab);
 	$.getJSON( simfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			repcount[data._default[key].replicate.toString] = 1;

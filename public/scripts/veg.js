@@ -8,7 +8,6 @@ function drawVegetation(r, rep){
 	}
 	pSC.val(vegtype);
 	pSC.change( function(){
-		alert("X");
 		vegtype = $( this ).find("option:selected").text();
 		drawPlot(plot, region, replicate, vegtype);
 	});

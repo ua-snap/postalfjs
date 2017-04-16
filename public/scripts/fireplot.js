@@ -38,12 +38,10 @@ $(document).ready( function() {
 	});
 	//$("#plotfile").change( function(){
 	//	simfile = $(this).val();
-	//	console.log(simfile);
 	//	drawPlot(plot, region, replicate);
 	//});
 	$("#fileList").change( function(){
 		simfile = $(this).val();
-		console.log(simfile);
 		drawPlot(plot, region, replicate);
 	});
 });
