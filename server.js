@@ -40,3 +40,4 @@ server.get('/fireplot', function (req, res) {
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080  
 , ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 server.listen(port, ip);
+console.log('Server running on http://%s:%s', ip, port);
