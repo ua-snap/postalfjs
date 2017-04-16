@@ -8,6 +8,7 @@ var express = require('express'),
   server = express()
 var util = require('util')
 
+Object.assign=require('object-assign') 
 
 function compile(str, path) {
   return stylus(str)
@@ -40,7 +41,6 @@ server.get('/fireplot', function (req, res) {
   { title : 'Fire Plots', files: fileList}
   )
 })
-
 
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080  
 , ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
