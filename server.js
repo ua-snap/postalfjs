@@ -2,6 +2,7 @@
 var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib')
+  , morgan = require('morgan')
 var util = require('util')
 var fs = require("fs")
 var server = express()
