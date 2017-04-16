@@ -27,6 +27,7 @@
   "dependencies": {
     "connect": "*",
     "ejs": "*",
+    "errorhandler": "*",
     "express": "*",
     "nib": "*",
     "jade": "*",
