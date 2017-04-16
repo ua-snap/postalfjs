@@ -16,7 +16,7 @@ function compile(str, path) {
 }
 
 server.set('views', __dirname + '/views')
-server.set('view engine', 'jade')
+server.set('view engine', 'pug')
 //server.use(express.logger('dev'))
 //server.use(stylus.middleware(
 //  { src: __dirname + '/public'
