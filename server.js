@@ -22,7 +22,8 @@ server.use(stylus.middleware(
   }
 ))
 server.use(express.static(__dirname + '/public'))
-server.use(express.bodyParser());
+server.use(express.urlencoded())
+server.use(express.json())
 
 
 server.get('/fireplot', function (req, res) {
