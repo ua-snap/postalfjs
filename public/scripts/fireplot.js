@@ -58,5 +58,7 @@ function drawPlot(p, reg, rep){
 		drawDecadalFireNum(reg, rep);
 	} else if (plot == "DFS"){
 		drawDecadalFireSize(reg, rep);
+	} else if (plot == "VEG"){
+		drawVegetation(reg, rep);
 	}
 }

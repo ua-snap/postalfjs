@@ -9,6 +9,7 @@ block content
   script(type="text/javascript", src="/scripts/decadal_firenum.js")
   script(type="text/javascript", src="/scripts/decadal_firesize.js")
   script(type="text/javascript", src="/scripts/avs.js")
+  script(type="text/javascript", src="/scripts/veg.js")
   script(type="text/javascript", src="/scripts/aabhist.js")
 
   div(style="width: 100%; height:60px; margin-bottom: 10px;")
@@ -27,13 +28,12 @@ block content
       option(value="CAB") Cumulative Area Burned
       option(value="DFN") Decadal Fire Num
       option(value="DFS") Decadal Fire Size
+      option(value="VEG") Vegetation Plots
     select#region
     select#rep
     //- input#plotfile(style="width: 300px;")
     select#fileList
-
-  div#plotSpecificControls
-    placeholder
+    div#plotSpecificControls
 
   div(style="display: inline-block; width: 234px; height: 60px; float: right;")
       script(type="text/javascript", src="http://pagead2.googlesyndication.com/pagead/show_ads.js")
