@@ -1,6 +1,7 @@
 #!/bin/env node
 var express = require('express'),
-  fs = require('fs')
+  bodyParser = require('body-parser'),
+  fs = require('fs'),
   stylus = require('stylus'),
   nib = require('nib'),
   morgan = require('morgan'),
@@ -23,8 +24,9 @@ server.set('view engine', 'jade')
 //  }
 //))
 server.use(express.static(__dirname + '/public'))
-server.use(express.urlencoded())
-server.use(express.json())
+//server.use(express.urlencoded())
+server.use(bodyParser.urlencoded({ extended: false }))
+server.use(bodyParser.json())
 server.use(morgan('combined'))
 
 

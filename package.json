@@ -25,6 +25,7 @@
   },
 
   "dependencies": {
+    "body-parser": "*",
     "connect": "*",
     "express": "*",
     "morgan": "*",
