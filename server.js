@@ -8,7 +8,6 @@ var express = require('express'),
   server = express()
 var util = require('util')
 
-Object.assign=require('object-assign') 
 
 function compile(str, path) {
   return stylus(str)
