@@ -1,14 +1,14 @@
 //Set Default Values
 var region = 'Boreal';
 var replicate = '0';
-var simfile = "/json/alfresco/Base.json";
-var obsfile = "/json/alfresco/OBS_TEST.json";
+var simfile = "/json/alfresco/1.00.json";
+var obsfile = "/json/alfresco/Historical.json";
 //var obsfile = "/json/alfresco/Observed.json";
 var plot = "DFN";
 var maxreps = 200;
 var startyear = 1950;
 var endyear = 2014;
-var pixelsize = 1000;  // In meters
+var ppk = 1;  // Pixels Per Kilometer
 $(document).ready( function() {
 	$.getJSON( obsfile, function( data ) {
 		var $rl = $("#region");
