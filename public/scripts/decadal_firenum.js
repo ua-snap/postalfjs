@@ -118,7 +118,7 @@ function calcFires(csyear, ceyear, data, key, size){
 		var small = 0;
 		var large = 0;
 		for (var i = 0; i < data._default[key].all_fire_sizes[region].length; i++){
-			if (data._default[key].all_fire_sizes[region][i] <= 3){
+			if (data._default[key].all_fire_sizes[region][i] <= 4){
 				small++;
 			} else {
 				large++;
