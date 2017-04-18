@@ -32,7 +32,8 @@ server.use(morgan('combined'))
 
 
 server.get('/fireplot', function (req, res) {
-  const folder = './public/json/alfresco/';
+  //const folder = './public/json/alfresco/';
+  const folder = process.env.ALF_JSON_PATH || './public/json/alfresco/';
   const fs = require('fs');
   var fileList = fs.readdirSync(folder);
   var cp = require("child_process");
