@@ -1,2 +1,3 @@
 #!/usr/bin/bash
+mkdir public/json
 ln -s /atlas_scratch/ALFRESCO_JSON public/json/alfresco
