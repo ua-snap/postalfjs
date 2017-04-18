@@ -1,8 +1,9 @@
 //Set Default Values
 var region = 'Boreal';
 var replicate = '0';
-var simfile = "/json/alfresco/1.00.json";
-var obsfile = "/json/alfresco/Historical.json";
+var jsonpath = "/json/alfresco/"
+var simfile = "1.00.json";
+var obsfile = "Historical.json";
 //var obsfile = "/json/alfresco/Observed.json";
 var plot = "AAB";
 var maxreps = 200;
@@ -10,7 +11,7 @@ var startyear = 1950;
 var endyear = 2014;
 var ppk = 1;  // Pixels Per Kilometer
 $(document).ready( function() {
-	$.getJSON( obsfile, function( data ) {
+	$.getJSON( jsonpath + obsfile, function( data ) {
 		var $rl = $("#region");
   		$.each( data._default['1']['avg_fire_size'], function( key, val ) {
 			$rl.append($("<option></option>").attr("value", key).text(key));
@@ -25,7 +26,7 @@ $(document).ready( function() {
 	for (var i = 0; i < flist.length; i++){
 		$tc.append($("<option></option>").attr("value", "/json/alfresco/" + flist[i]).text(flist[i]));
 	}
-	$("#plotfile").val(simfile);
+	$("#plotfile").val(jsonpath + simfile);
 	drawPlot(plot, region, replicate);
 	$("#region").on("change", function(){
 		drawPlot(plot, $( this ).find("option:selected").text(), replicate);

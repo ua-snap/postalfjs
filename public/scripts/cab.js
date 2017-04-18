@@ -10,7 +10,7 @@ function drawCumulativeAreaBurned(r, rep){
 	var ptitle = 'Cumulative Area Burned: ' + region + ', Rep: ' + replicate;
 
 	$.ajaxSetup({ async: false, dataType: "json" });
-	$.getJSON( obsfile, function( data ) {
+	$.getJSON( jsonpath + obsfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			if (data._default[key].fire_year >= startyear){
 				hdar["'" + data._default[key].fire_year + "'"] = data._default[key].total_area_burned[region];
@@ -39,7 +39,7 @@ function drawCumulativeAreaBurned(r, rep){
 		dar["'" + i + "'"] = {};
 	}
 	var repcount = [];
-	$.getJSON( simfile, function( data ) {
+	$.getJSON( jsonpath + simfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			repcount[data._default[key].replicate.toString] = 1;
 		});

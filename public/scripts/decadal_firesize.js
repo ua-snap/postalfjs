@@ -8,7 +8,7 @@ function drawDecadalFireSize(r, rep){
 	var dfnum = new Array(0,0,0,0,0,0,0);
 	var dyar = new Array(0,0,0,0,0,0,0);
 	$.ajaxSetup({ async: false, dataType: "json" });
-	$.getJSON( obsfile, function( data ) {
+	$.getJSON( jsonpath + obsfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			dxar.push(data._default[key].fire_year);
 			dfnum[0] += addFN("1950", "1959", data, key);
@@ -44,7 +44,7 @@ function drawDecadalFireSize(r, rep){
 	var tab = new Array(0,0,0,0,0,0,0);
 	var fnum = new Array(0,0,0,0,0,0,0);
 	var repcount = [];
-	$.getJSON( simfile, function( data ) {
+	$.getJSON( jsonpath + simfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			repcount[data._default[key].replicate.toString] = 1;
 		});

@@ -9,7 +9,7 @@ function drawDecadalFireNum(r, rep){
 	var dyar = new Array(0,0,0,0,0,0,0);
 	var dsar = new Array(0,0,0,0,0,0,0);
 	$.ajaxSetup({ async: false, dataType: "json" });
-	$.getJSON( obsfile, function( data ) {
+	$.getJSON( jsonpath + obsfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			dxar.push(data._default[key].fire_year);
 			dyar[0] += calcFires("1950", "1959", data, key);
@@ -52,7 +52,7 @@ function drawDecadalFireNum(r, rep){
 	var yar = new Array(0,0,0,0,0,0,0);
 	var tar = new Array();
 	var repcount = [];
-	$.getJSON( simfile, function( data ) {
+	$.getJSON( jsonpath + simfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			repcount[data._default[key].replicate.toString] = 1;
 		});

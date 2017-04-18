@@ -7,7 +7,7 @@ function drawHistAnnualAreaBurned(r){
 	var ptitle = 'Historical Annual Area Burned: ' + region;
 
 	$.ajaxSetup({ async: false, dataType: "json" });
-	$.getJSON( obsfile, function( data ) {
+	$.getJSON( jsonpath + obsfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			yar.push(data._default[key].total_area_burned[region]);
 			xar.push(data._default[key].fire_year);

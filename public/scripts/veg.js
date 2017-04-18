@@ -28,7 +28,7 @@ function drawVegetation(r, rep){
 		dar["'" + i + "'"] = {};
 	}
 	var repcount = [];
-	$.getJSON( simfile, function( data ) {
+	$.getJSON( jsonpath + simfile, function( data ) {
   		$.each( data._default, function( key, val ) {
 			repcount[data._default[key].replicate.toString] = 1;
 		});
