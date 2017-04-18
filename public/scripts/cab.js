@@ -93,9 +93,9 @@ function drawCumulativeAreaBurned(r, rep){
 	  width: 1000,
 	  hovermode: 'closest',
 	  autotick: true,
-          //yaxis: {
-	  //	range: [0, 300000]
-	  //},
+          yaxis: {
+	  	range: [0, 300000]
+	  },
 	  xaxis: {
 		range: [startyear, endyear]
 	  }
