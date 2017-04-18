@@ -17,22 +17,12 @@ function compile(str, path) {
 
 server.set('views', __dirname + '/views')
 server.set('view engine', 'pug')
-//server.use(express.logger('dev'))
-//server.use(stylus.middleware(
-//  { src: __dirname + '/public'
-//  , compile: compile
-//  }
-//))
 server.use(express.static(__dirname + '/public'))
-//server.use(express.urlencoded())
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json())
 server.use(morgan('combined'))
 
-
-
-server.get('/fireplot', function (req, res) {
-  //const folder = './public/json/alfresco/';
+server.get('/', function (req, res) {
   const folder = process.env.ALF_JSON_PATH || './public/json/alfresco/';
   const fs = require('fs');
   var fileList = fs.readdirSync(folder);
