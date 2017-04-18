@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+ln -s /atlas_scratch/ALFRESCO_JSON public/json/alfresco
