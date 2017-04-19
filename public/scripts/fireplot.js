@@ -20,13 +20,15 @@ $(document).ready( function() {
 	for (var i = 0; i < maxreps; i++){
 		$rc.append($("<option></option>").attr("value", i).text(i));
 	}
-	var $fl = $("#fileList");
-	var $ol = $("#obsList");
+	var fl = $("#fileList");
+	var ol = $("#obsList");
 	var flist = myFiles.split(",");
 	for (var i = 0; i < flist.length; i++){
-		$fl.append($("<option></option>").attr("value", flist[i]).text(flist[i]));
-		$ol.append($("<option></option>").attr("value", flist[i]).text(flist[i]));
+		fl.append($("<option></option>").attr("value", flist[i]).text(flist[i]));
+		ol.append($("<option></option>").attr("value", flist[i]).text(flist[i]));
 	}
+	fl.val(simfile);
+	ol.val(obsfile);
 	$("#plotfile").val(jsonpath + simfile);
 	drawPlot(plot, region, replicate);
 	$("#region").on("change", function(){
@@ -69,7 +71,6 @@ function drawPlot(p, reg, rep){
 	plot = p;
 	if (plot == "CAB"){
 		drawCumulativeAreaBurned(reg, rep);
-
 	} else if (plot == "AAB"){
 		drawAnnualAreaBurned(reg, rep);
 	} else if (plot == "DFN"){
