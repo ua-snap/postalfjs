@@ -1,6 +1,6 @@
 var vegtype = "Deciduous";
 function drawVegetation(r, rep){
-	$("#plotSpecificControls").html("<select id='vegtype'></select>");
+	$("#plotSpecificControls").html("<span>Veg Type: </span><select id='vegtype'></select>");
 	var pSC = $("#vegtype");
 	var vegarr = new Array("NoVeg", "Deciduous", "Black Spruce", "White Spruce", "Graminoid Tundra", "Shrub Tundra", "Wetland Tundra", "Barren lichen-moss", "Temperate Rainforest");
 	for (var i = 0; i < vegarr.length; i++){

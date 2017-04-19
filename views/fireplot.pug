@@ -12,26 +12,32 @@ block content
   script(type="text/javascript", src="/scripts/veg.js")
   script(type="text/javascript", src="/scripts/aabhist.js")
 
-  div(style="width: 100%; height:60px; margin-bottom: 10px;")
-    div#xyz(style="display: inline-block;")
-      h2 ALFRESCO Fire Plots
-    div(style="display: inline-block; width: 234px; height: 60px; float: right;")
-      script.
+  script.
+    var myFiles = "#{files}"
 
-        var myFiles = "#{files}"
+  div(style="width: 100%; margin-bottom: 10px;")
+    h2 ALFRESCO Fire Plots
 
   div#firePlot(style="width: 1000px; height: 700px;")
 
-  div#plotControls(style="text-align: center;")
-    select#plotStyle
-      option(value="AAB") Annual Area Burned
-      option(value="CAB") Cumulative Area Burned
-      option(value="DFN") Decadal Fire Num
-      option(value="DFS") Decadal Fire Size
-      option(value="VEG") Vegetation Plots
-    select#region
-    select#rep
-    //- input#plotfile(style="width: 300px;")
-    select#fileList
-    div#plotSpecificControls
+  div#plotControls(style="text-align: left;")
+    div
+      span Plot Type:
+      select#plotStyle 
+        option(value="AAB") Annual Area Burned
+        option(value="CAB") Cumulative Area Burned
+        option(value="DFN") Decadal Fire Num
+        option(value="DFS") Decadal Fire Size
+        option(value="VEG") Vegetation Plots
+      div
+        span Region:
+        select#region
+      div
+        span Replicate:
+        select#rep
+      //- input#plotfile(style="width: 300px;")
+      div
+        span Simulation File:
+        select#fileList
+      div#plotSpecificControls
 
