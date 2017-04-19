@@ -20,10 +20,12 @@ $(document).ready( function() {
 	for (var i = 0; i < maxreps; i++){
 		$rc.append($("<option></option>").attr("value", i).text(i));
 	}
-	var $tc = $("#fileList");
+	var $fl = $("#fileList");
+	var $ol = $("#obsList");
 	var flist = myFiles.split(",");
 	for (var i = 0; i < flist.length; i++){
-		$tc.append($("<option></option>").attr("value", flist[i]).text(flist[i]));
+		$fl.append($("<option></option>").attr("value", flist[i]).text(flist[i]));
+		$ol.append($("<option></option>").attr("value", flist[i]).text(flist[i]));
 	}
 	$("#plotfile").val(jsonpath + simfile);
 	drawPlot(plot, region, replicate);
@@ -44,6 +46,17 @@ $(document).ready( function() {
 		simfile = $(this).val();
 		drawPlot(plot, region, replicate);
 		$.getJSON( jsonpath + simfile, function( data ) {
+			var $rl = $("#region");
+			$rl.text(" ");
+			$.each( data._default['1']['avg_fire_size'], function( key, val ) {
+				$rl.append($("<option></option>").attr("value", key).text(key));
+			});
+		});
+	});
+	$("#obsList").change( function(){
+		obsfile = $(this).val();
+		drawPlot(plot, region, replicate);
+		$.getJSON( jsonpath + obsfile, function( data ) {
 			var $rl = $("#region");
 			$rl.text(" ");
 			$.each( data._default['1']['avg_fire_size'], function( key, val ) {
