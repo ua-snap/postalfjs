@@ -4,7 +4,6 @@ var replicate = '0';
 var jsonpath = "/json/alfresco/"
 var simfile = "1.00.json";
 var obsfile = "Historical.json";
-//var obsfile = "/json/alfresco/Observed.json";
 var plot = "AAB";
 var maxreps = 200;
 var startyear = 1950;
@@ -24,7 +23,7 @@ $(document).ready( function() {
 	var $tc = $("#fileList");
 	var flist = myFiles.split(",");
 	for (var i = 0; i < flist.length; i++){
-		$tc.append($("<option></option>").attr("value", "/json/alfresco/" + flist[i]).text(flist[i]));
+		$tc.append($("<option></option>").attr("value", flist[i]).text(flist[i]));
 	}
 	$("#plotfile").val(jsonpath + simfile);
 	drawPlot(plot, region, replicate);
@@ -44,6 +43,13 @@ $(document).ready( function() {
 	$("#fileList").change( function(){
 		simfile = $(this).val();
 		drawPlot(plot, region, replicate);
+		$.getJSON( jsonpath + simfile, function( data ) {
+			var $rl = $("#region");
+			$rl.text(" ");
+			$.each( data._default['1']['avg_fire_size'], function( key, val ) {
+				$rl.append($("<option></option>").attr("value", key).text(key));
+			});
+		});
 	});
 });
 function drawPlot(p, reg, rep){
